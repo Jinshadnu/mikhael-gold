@@ -413,3 +413,4 @@ export const AdminEnquiries: React.FC = () => {
     </div>
   );
 };
+

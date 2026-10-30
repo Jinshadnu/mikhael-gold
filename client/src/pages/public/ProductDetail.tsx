@@ -367,3 +367,4 @@ export const ProductDetail: React.FC = () => {
     </div>
   );
 };
+

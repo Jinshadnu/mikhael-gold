@@ -145,3 +145,4 @@ CREATE INDEX IF NOT EXISTS idx_products_status ON products(publication_status, i
 CREATE INDEX IF NOT EXISTS idx_categories_slug ON categories(slug);
 CREATE INDEX IF NOT EXISTS idx_enquiries_status ON enquiries(status);
 CREATE INDEX IF NOT EXISTS idx_product_images_product ON product_images(product_id);
+

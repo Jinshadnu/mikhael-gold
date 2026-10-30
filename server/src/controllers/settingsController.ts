@@ -52,3 +52,4 @@ export async function updateAdminSettings(req: Request, res: Response): Promise<
 
   res.json({ success: true, message: 'Settings saved successfully.' });
 }
+

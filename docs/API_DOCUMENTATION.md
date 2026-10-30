@@ -74,3 +74,4 @@ All endpoints return JSON responses adhering to the following structure:
 ### Business Settings
 * `GET /settings`: Retrieve all store configuration key-values.
 * `PUT /settings`: Save updated store settings.
+

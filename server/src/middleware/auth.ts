@@ -45,3 +45,4 @@ export async function requireAdmin(req: Request, res: Response, next: NextFuncti
     res.status(401).json({ success: false, error: 'Invalid or expired authentication token.' });
   }
 }
+

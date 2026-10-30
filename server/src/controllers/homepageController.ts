@@ -78,3 +78,4 @@ export async function updateHomepageSection(req: Request, res: Response): Promis
 
   res.json({ success: true, message: 'Homepage section updated successfully.' });
 }
+

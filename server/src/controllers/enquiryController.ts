@@ -187,3 +187,4 @@ export async function exportEnquiriesCsv(_req: Request, res: Response): Promise<
   res.setHeader('Content-Disposition', `attachment; filename="mikhael_enquiries_${Date.now()}.csv"`);
   res.send(csvContent);
 }
+

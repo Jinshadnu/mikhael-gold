@@ -161,3 +161,4 @@ export async function deleteCategory(req: Request, res: Response): Promise<void>
 
   res.json({ success: true, message: 'Category deleted successfully.' });
 }
+

@@ -40,3 +40,4 @@ export const AnnouncementBar: React.FC<AnnouncementBarProps> = ({ data }) => {
     </div>
   );
 };
+

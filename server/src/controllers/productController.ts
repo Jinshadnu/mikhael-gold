@@ -487,3 +487,4 @@ export async function toggleProductPublish(req: Request, res: Response): Promise
 
   res.json({ success: true, data: { publication_status: newStatus } });
 }
+

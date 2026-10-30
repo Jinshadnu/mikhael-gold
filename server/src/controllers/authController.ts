@@ -120,3 +120,4 @@ export async function changePassword(req: Request, res: Response): Promise<void>
 
   res.json({ success: true, message: 'Password updated successfully.' });
 }
+

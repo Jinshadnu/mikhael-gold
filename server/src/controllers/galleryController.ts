@@ -88,3 +88,4 @@ export async function deleteGalleryImage(req: Request, res: Response): Promise<v
 
   res.json({ success: true, message: 'Gallery image removed successfully.' });
 }
+

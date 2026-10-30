@@ -93,3 +93,4 @@ export const BridalSection: React.FC<BridalSectionProps> = ({ data }) => {
     </section>
   );
 };
+

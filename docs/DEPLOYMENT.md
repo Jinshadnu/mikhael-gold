@@ -168,3 +168,4 @@ If deploying the frontend to Netlify and the backend to an external API server:
 3. Build command: `npm --workspace=client run build`
 4. Publish directory: `client/dist`
 5. The SPA redirect rule `client/public/_redirects` will automatically route all routes to `index.html`.
+

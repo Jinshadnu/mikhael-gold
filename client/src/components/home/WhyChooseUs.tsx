@@ -85,3 +85,4 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ data }) => {
     </section>
   );
 };
+

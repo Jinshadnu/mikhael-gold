@@ -62,3 +62,4 @@ export const Terms: React.FC = () => {
     </div>
   );
 };
+

@@ -162,3 +162,4 @@ export interface DashboardStats {
   totalEnquiries: number;
   newEnquiries: number;
 }
+

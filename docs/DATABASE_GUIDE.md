@@ -90,3 +90,4 @@ For SQLite mode:
 ```bash
 sqlite3 server/mikhael.db ".backup 'mikhael_backup.db'"
 ```
+

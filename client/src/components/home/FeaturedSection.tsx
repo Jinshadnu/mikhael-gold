@@ -46,3 +46,4 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = ({ products, onEn
     </section>
   );
 };
+

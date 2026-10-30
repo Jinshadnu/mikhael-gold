@@ -130,3 +130,4 @@ export const Gallery: React.FC = () => {
     </div>
   );
 };
+

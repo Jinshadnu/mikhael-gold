@@ -76,3 +76,4 @@ Sitemap: ${baseUrl}/sitemap.xml
   res.setHeader('Content-Type', 'text/plain');
   res.send(robots);
 }
+

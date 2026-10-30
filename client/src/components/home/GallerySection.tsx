@@ -125,3 +125,4 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ items }) => {
     </section>
   );
 };
+

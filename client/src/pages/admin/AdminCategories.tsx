@@ -349,3 +349,4 @@ export const AdminCategories: React.FC = () => {
     </div>
   );
 };
+
