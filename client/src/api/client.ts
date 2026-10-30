@@ -9,7 +9,10 @@ import {
   DashboardStats,
 } from '../types';
 
-const API_BASE = '/api';
+const API_BASE =
+  typeof window !== 'undefined' && window.location.port === '3000'
+    ? 'http://127.0.0.1:5001/api'
+    : '/api';
 
 function getAuthHeader(): Record<string, string> {
   const token = localStorage.getItem('mikhael_admin_token');
