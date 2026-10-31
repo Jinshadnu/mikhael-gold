@@ -17,6 +17,7 @@ import { Footer } from '../../components/layout/Footer';
 import { ProductCard } from '../../components/common/ProductCard';
 import { useSettings } from '../../context/SettingsContext';
 import { Product } from '../../types';
+import { assetUrl } from '../../utils/assets';
 
 export const ProductDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -114,7 +115,7 @@ export const ProductDetail: React.FC = () => {
     slug: slug || 'lakshmi-kasu-mala',
     category_id: 1,
     category_name: 'Necklaces',
-    main_image: '/img/kasu-mala.png',
+    main_image: assetUrl('/img/kasu-mala.png'),
     purity: '22K · 916 Hallmarked',
     gross_weight: 48,
     sku: 'MK-KM-01',
@@ -133,7 +134,7 @@ export const ProductDetail: React.FC = () => {
     ...(activeProduct.images?.map((img) => img.image_url) || []),
   ].filter(Boolean) as string[];
 
-  const currentImage = selectedImage || allImages[0] || '/img/kasu-mala.png';
+  const currentImage = selectedImage || allImages[0] || assetUrl('/img/kasu-mala.png');
   const malayalam = getMalayalam(activeProduct.name);
   const whatsappMsg = `Hello Mikhael Gold and Diamonds, I am interested in "${activeProduct.name}" (Code: ${activeProduct.sku}). Please let me know its availability and price details.`;
 
@@ -150,7 +151,7 @@ export const ProductDetail: React.FC = () => {
           <div className="lg:col-span-7">
             <div className="overflow-hidden rounded-2xl border border-[#E8D39A] bg-white p-3 shadow-xl">
               <img
-                src={currentImage}
+                src={assetUrl(currentImage)}
                 alt={activeProduct.name}
                 className="aspect-[4/3] w-full rounded-xl object-cover transition duration-700 hover:scale-105"
               />
@@ -169,7 +170,7 @@ export const ProductDetail: React.FC = () => {
                         : 'border-[#E8D39A] opacity-75 hover:opacity-100'
                     }`}
                   >
-                    <img src={img} alt="" className="h-full w-full object-cover rounded-lg" />
+                    <img src={assetUrl(img)} alt="" className="h-full w-full object-cover rounded-lg" />
                   </button>
                 ))}
               </div>

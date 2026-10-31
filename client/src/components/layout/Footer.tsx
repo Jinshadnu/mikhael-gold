@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSettings } from '../../context/SettingsContext';
 import { MapPin, Phone, Clock, MessageSquare, ExternalLink, ShieldCheck } from 'lucide-react';
+import { assetUrl } from '../../utils/assets';
 
 export const Footer: React.FC = () => {
   const { settings, getWhatsAppLink } = useSettings();
@@ -20,7 +21,7 @@ export const Footer: React.FC = () => {
             <Link to="/" className="flex items-center gap-3.5 group">
               <div className="h-14 w-14 shrink-0 rounded-full ring-2 ring-[#D4AF37] overflow-hidden bg-[#780817] shadow-lg">
                 <img
-                  src="/img/logo.png"
+                  src={assetUrl('/img/logo.png')}
                   alt="Mikhael Gold & Diamonds"
                   className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                   width={56}

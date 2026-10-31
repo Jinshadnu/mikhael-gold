@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import { Product } from '../../types';
+import { assetUrl } from '../../utils/assets';
 
 interface ProductCardProps {
   product: Product;
@@ -36,7 +37,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         {/* Arched Image Frame */}
         <div className="relative aspect-[4/5] w-full overflow-hidden rounded-t-[999px] rounded-b-xl bg-[#F3EDE1]">
           <img
-            src={product.main_image || '/img/kasu-mala.png'}
+            src={assetUrl(product.main_image || '/img/kasu-mala.png')}
             alt={product.name}
             loading="lazy"
             className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-108"

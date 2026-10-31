@@ -15,6 +15,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import { assetUrl } from '../../utils/assets';
 
 export const AdminLayout: React.FC = () => {
   const { user, logout } = useAuth();
@@ -45,7 +46,7 @@ export const AdminLayout: React.FC = () => {
           {/* Brand Emblem */}
           <div className="p-6 border-b border-slate-800 flex items-center gap-3">
             <div className="w-10 h-10 rounded-full ring-1 ring-gold/40 overflow-hidden bg-maroon shrink-0">
-              <img src="/img/logo.png" alt="Mikhael Gold & Diamonds" className="w-full h-full object-cover" />
+              <img src={assetUrl('/img/logo.png')} alt="Mikhael Gold & Diamonds" className="w-full h-full object-cover" />
             </div>
             <div>
               <p className="font-serif text-sm font-bold tracking-widest text-slate-100 uppercase">

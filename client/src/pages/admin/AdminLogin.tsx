@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Lock, Mail, AlertCircle, ArrowRight, ShieldCheck } from 'lucide-react';
 import { api } from '../../api/client';
 import { useAuth } from '../../context/AuthContext';
+import { assetUrl } from '../../utils/assets';
 
 export const AdminLogin: React.FC = () => {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ export const AdminLogin: React.FC = () => {
         {/* Brand Header */}
         <div className="text-center mb-8">
           <div className="w-16 h-16 rounded-full ring-2 ring-gold/50 overflow-hidden bg-maroon mx-auto shadow-xl mb-4">
-            <img src="/img/logo.png" alt="Mikhael Gold & Diamonds" className="w-full h-full object-cover" />
+            <img src={assetUrl('/img/logo.png')} alt="Mikhael Gold & Diamonds" className="w-full h-full object-cover" />
           </div>
           <h1 className="font-display text-2xl sm:text-3xl font-bold text-ivory tracking-wider uppercase">
             Mikhael Gold &amp; Diamonds

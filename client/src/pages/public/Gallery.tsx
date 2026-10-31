@@ -5,6 +5,7 @@ import { api } from '../../api/client';
 import { GalleryItem } from '../../types';
 import { Header } from '../../components/layout/Header';
 import { Footer } from '../../components/layout/Footer';
+import { assetUrl } from '../../utils/assets';
 
 export const Gallery: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -21,7 +22,7 @@ export const Gallery: React.FC = () => {
     {
       id: 1,
       title: 'Lakshmi Kasu Mala Crafting',
-      image_url: '/img/kasu-mala.png',
+      image_url: assetUrl('/img/kasu-mala.png'),
       category: 'Necklaces',
       alt_text: 'Hand die-struck Lakshmi gold coins strung on delicate bead chain in pure 22K hallmarked gold.',
       display_order: 1,
@@ -30,7 +31,7 @@ export const Gallery: React.FC = () => {
     {
       id: 2,
       title: 'Palakka Mala Emerald Setting',
-      image_url: '/img/palakka-mala.png',
+      image_url: assetUrl('/img/palakka-mala.png'),
       category: 'Necklaces',
       alt_text: 'Traditional Kerala cabochon glass and synthetic emerald setting in 22K gold.',
       display_order: 2,
@@ -39,7 +40,7 @@ export const Gallery: React.FC = () => {
     {
       id: 3,
       title: 'Nagapadam Thaali Heritage',
-      image_url: '/img/nagapadam.png',
+      image_url: assetUrl('/img/nagapadam.png'),
       category: 'Necklaces',
       alt_text: 'Sacred serpent-hood shaped bridal pendant worn in royal traditional Kerala wedding suites.',
       display_order: 3,
@@ -48,7 +49,7 @@ export const Gallery: React.FC = () => {
     {
       id: 4,
       title: 'Temple Jhumkas and Bells',
-      image_url: '/img/jhumka.png',
+      image_url: assetUrl('/img/jhumka.png'),
       category: 'Craftsmanship',
       alt_text: 'Floral stud with tiered dome and hanging gold bells tuned by master karigars.',
       display_order: 4,
@@ -57,7 +58,7 @@ export const Gallery: React.FC = () => {
     {
       id: 5,
       title: 'Imperial Kerala Bangles',
-      image_url: '/img/bangles.png',
+      image_url: assetUrl('/img/bangles.png'),
       category: 'Bangles',
       alt_text: 'Intricate filigree and repoussé craftsmanship handed down across three generations.',
       display_order: 5,
@@ -66,7 +67,7 @@ export const Gallery: React.FC = () => {
     {
       id: 6,
       title: 'Master Goldsmith Atelier',
-      image_url: '/img/craft.png',
+      image_url: assetUrl('/img/craft.png'),
       category: 'Craftsmanship',
       alt_text: 'Three generations at the same workbench shaping timeless heirlooms at Punnayurkulam.',
       display_order: 6,
@@ -75,7 +76,7 @@ export const Gallery: React.FC = () => {
     {
       id: 7,
       title: 'Nila Brilliant Solitaire Diamond',
-      image_url: '/img/ring.png',
+      image_url: assetUrl('/img/ring.png'),
       category: 'Diamonds',
       alt_text: 'Certified VVS-EF brilliant cut solitaire hand-set in 18K white and rose gold.',
       display_order: 7,
@@ -84,7 +85,7 @@ export const Gallery: React.FC = () => {
     {
       id: 8,
       title: 'Complete Bridal Wedding Trousseau',
-      image_url: '/img/hero.png',
+      image_url: assetUrl('/img/hero.png'),
       category: 'Bridal Suite',
       alt_text: 'A majestic multi-tiered Kerala bridal set featuring Kasu Mala, Palakka, and waist Odiyanam.',
       display_order: 8,
@@ -151,7 +152,7 @@ export const Gallery: React.FC = () => {
                 className="group relative aspect-[4/3] cursor-pointer overflow-hidden rounded-2xl border border-[#E8D39A]/60 bg-[#FFFFFF] shadow-sm hover:shadow-xl hover:border-[#780817] transition-all duration-500"
               >
                 <img
-                  src={item.image_url}
+                  src={assetUrl(item.image_url)}
                   alt={item.title || 'MIKHAEL Gold & Diamonds'}
                   className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   loading="lazy"
@@ -231,7 +232,7 @@ export const Gallery: React.FC = () => {
           >
             <div className="max-h-[68vh] overflow-hidden rounded-xl bg-[#F3EDE1] flex items-center justify-center">
               <img
-                src={activeLightbox.image_url}
+                src={assetUrl(activeLightbox.image_url)}
                 alt={activeLightbox.title}
                 className="max-h-[68vh] w-auto max-w-full object-contain mx-auto"
               />

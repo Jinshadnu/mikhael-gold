@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ShieldCheck, Heart, Sparkles, MapPin, ArrowRight, Award, Clock, Gem } from 'lucide-react';
 import { Header } from '../../components/layout/Header';
 import { Footer } from '../../components/layout/Footer';
+import { assetUrl } from '../../utils/assets';
 
 export const About: React.FC = () => {
   return (
@@ -80,7 +81,7 @@ export const About: React.FC = () => {
               <div className="relative">
                 <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-[#E8D39A]">
                   <img
-                    src="/img/craft.png"
+                    src={assetUrl('/img/craft.png')}
                     alt="Master goldsmith bench at Mikhael Gold"
                     className="w-full h-full object-cover"
                   />

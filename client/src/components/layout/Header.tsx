@@ -10,6 +10,7 @@ import {
   MapPin,
   Clock,
 } from 'lucide-react';
+import { assetUrl } from '../../utils/assets';
 
 interface SubmenuItem {
   name: string;
@@ -95,7 +96,7 @@ export const Header: React.FC = () => {
       featured: {
         title: 'Lakshmi Kasu Mala',
         description: 'Heirloom bridal necklace with 41 hand-struck Lakshmi coins in pure 22K gold.',
-        image: '/img/kasu-mala.png',
+        image: assetUrl('/img/kasu-mala.png'),
         href: '/products/lakshmi-kasu-mala',
       },
     },
@@ -112,7 +113,7 @@ export const Header: React.FC = () => {
       featured: {
         title: 'Nila Solitaire Ring',
         description: 'IGI certified brilliant-cut diamond set in a sculptural 18K gold basket.',
-        image: '/img/ring.png',
+        image: assetUrl('/img/ring.png'),
         href: '/products/nila-solitaire-ring',
       },
     },
@@ -129,7 +130,7 @@ export const Header: React.FC = () => {
       featured: {
         title: 'Emerald Palakka Mala',
         description: 'Authentic royal Kerala choker adorned with deep green cabochon stones.',
-        image: '/img/palakka-mala.png',
+        image: assetUrl('/img/palakka-mala.png'),
         href: '/products/emerald-palakka-mala',
       },
     },
@@ -192,7 +193,7 @@ export const Header: React.FC = () => {
                   }`}
                 >
                   <img
-                    src="/img/logo.png"
+                    src={assetUrl('/img/logo.png')}
                     alt="Mikhael Gold & Diamonds Official Emblem"
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     width={72}
@@ -598,7 +599,7 @@ export const Header: React.FC = () => {
                 <div className="flex items-center gap-3">
                   <div className="h-12 w-12 shrink-0 rounded-full border border-[#D4AF37] overflow-hidden bg-[#780817]">
                     <img
-                      src="/img/logo.png"
+                      src={assetUrl('/img/logo.png')}
                       alt="Mikhael Gold & Diamonds"
                       className="h-full w-full object-cover"
                     />

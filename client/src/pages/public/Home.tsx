@@ -23,6 +23,7 @@ import { Footer } from '../../components/layout/Footer';
 import { ProductCard } from '../../components/common/ProductCard';
 import { useSettings } from '../../context/SettingsContext';
 import { Product } from '../../types';
+import { assetUrl } from '../../utils/assets';
 
 export const Home: React.FC = () => {
   const { settings, getWhatsAppLink } = useSettings();
@@ -55,7 +56,7 @@ export const Home: React.FC = () => {
           slug: 'emerald-palakka-mala',
           category_id: 1,
           category_name: 'Necklaces',
-          main_image: '/img/palakka-mala.png',
+          main_image: assetUrl('/img/palakka-mala.png'),
           purity: '22K · 916',
           sku: 'MK-PK-01',
           material: '22K Gold & Emerald',
@@ -72,7 +73,7 @@ export const Home: React.FC = () => {
           slug: 'nagapadam-thaali',
           category_id: 1,
           category_name: 'Necklaces',
-          main_image: '/img/nagapadam.png',
+          main_image: assetUrl('/img/nagapadam.png'),
           purity: '22K · 916',
           sku: 'MK-NP-02',
           material: '22K Gold',
@@ -89,7 +90,7 @@ export const Home: React.FC = () => {
           slug: 'mullamottu-mala',
           category_id: 1,
           category_name: 'Necklaces',
-          main_image: '/img/mullamottu.png',
+          main_image: assetUrl('/img/mullamottu.png'),
           purity: '22K · 916',
           sku: 'MK-MM-03',
           material: '22K Gold',
@@ -106,7 +107,7 @@ export const Home: React.FC = () => {
           slug: 'temple-jhumka',
           category_id: 2,
           category_name: 'Earrings',
-          main_image: '/img/jhumka.png',
+          main_image: assetUrl('/img/jhumka.png'),
           purity: '22K · 916',
           sku: 'MK-TJ-04',
           material: '22K Gold',
@@ -123,7 +124,7 @@ export const Home: React.FC = () => {
           slug: 'engraved-kerala-bangles',
           category_id: 3,
           category_name: 'Bangles',
-          main_image: '/img/bangles.png',
+          main_image: assetUrl('/img/bangles.png'),
           purity: '22K · 916',
           sku: 'MK-KB-05',
           material: '22K Gold',
@@ -140,7 +141,7 @@ export const Home: React.FC = () => {
           slug: 'nila-solitaire-ring',
           category_id: 4,
           category_name: 'Rings',
-          main_image: '/img/ring.png',
+          main_image: assetUrl('/img/ring.png'),
           purity: '18K Diamond',
           sku: 'MK-NR-06',
           material: '18K Gold & Certified Diamond',
@@ -194,7 +195,7 @@ export const Home: React.FC = () => {
           {/* Hero Photography with Warm Luxury Vignette Overlay */}
           <div className="absolute inset-0">
             <img
-              src="/img/hero.png"
+              src={assetUrl('/img/hero.png')}
               alt="Mikhael Gold & Diamonds Fine Jewellery Suite"
               className="h-full w-full object-cover object-[75%_center] lg:object-center brightness-[0.88] contrast-[1.05]"
             />
@@ -289,7 +290,7 @@ export const Home: React.FC = () => {
                 <div className="absolute -inset-4 -z-10 rounded-[2rem] border border-[#D4AF37]/50 bg-white/60 shadow-lg" />
                 <div className="overflow-hidden rounded-[1.5rem] bg-white border border-[#E8D39A] shadow-xl">
                   <img
-                    src="/img/kasu-mala.png"
+                    src={assetUrl('/img/kasu-mala.png')}
                     alt="Lakshmi Kasu Mala Heritage Necklace"
                     loading="lazy"
                     className="aspect-[3/2] w-full object-cover transition-transform duration-700 hover:scale-105"
@@ -380,7 +381,7 @@ export const Home: React.FC = () => {
                 <div>
                   <div className="aspect-[4/3] rounded-xl overflow-hidden bg-[#FAF8F2] mb-6">
                     <img
-                      src="/img/ring.png"
+                      src={assetUrl('/img/ring.png')}
                       alt="Nila Solitaire Ring"
                       className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                     />
@@ -412,7 +413,7 @@ export const Home: React.FC = () => {
                 <div>
                   <div className="aspect-[4/3] rounded-xl overflow-hidden bg-[#FAF8F2] mb-6">
                     <img
-                      src="/img/coin.png"
+                      src={assetUrl('/img/coin.png')}
                       alt="Pure Gold Coins & Bars"
                       className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                     />
@@ -444,7 +445,7 @@ export const Home: React.FC = () => {
                 <div>
                   <div className="aspect-[4/3] rounded-xl overflow-hidden bg-[#FAF8F2] mb-6">
                     <img
-                      src="/img/bangles.png"
+                      src={assetUrl('/img/bangles.png')}
                       alt="Engraved Kerala Bangles"
                       className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                     />
@@ -552,7 +553,7 @@ export const Home: React.FC = () => {
             <div className="relative order-2 lg:order-1">
               <div className="overflow-hidden rounded-b-[999px] rounded-t-2xl border border-[#D4AF37]/50 bg-white p-2 shadow-2xl">
                 <img
-                  src="/img/craft.png"
+                  src={assetUrl('/img/craft.png')}
                   alt="Mikhael Goldsmith Hand-engraving a Gold Bangle"
                   loading="lazy"
                   className="aspect-[11/13] w-full rounded-b-[999px] rounded-t-xl object-cover"
