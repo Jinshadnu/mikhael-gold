@@ -1,9 +1,11 @@
 # MIKHAEL GOLD AND DIAMONDS LLP
-### Premium Jewellery E-Commerce Website & Content Management System
+### Premium Luxury Jewellery E-Commerce Website & Content Management System
 
 A production-ready web application and administrative management console built for **MIKHAEL GOLD AND DIAMONDS LLP**, located at Mahima Complex, Punnayurkulam, Kerala.
 
-Inspired by Kerala fine jewellery heritage and modern luxury design principles, balancing deep luxury black (`#101010`), warm ivory (`#FAF7F0`), and champagne gold (`#C8A45D`) with traditional Kasavu accents.
+Inspired by Kerala fine jewellery heritage and the company's official circular emblem, featuring Royal Burgundy (`#780817`), Dark Burgundy (`#530510`), Deep Wine (`#40030B`), Royal Gold (`#D4AF37`), Champagne Gold (`#E8D39A`), and Warm Ivory (`#FAF8F2`).
+
+* **Live Demo (GitHub Pages)**: [https://jinshadnu.github.io/mikhael-gold/](https://jinshadnu.github.io/mikhael-gold/)
 
 ---
 
