@@ -7,40 +7,70 @@ export default {
   theme: {
     extend: {
       colors: {
-        luxury: {
-          black: '#101010',
-          dark: '#161616',
-          card: '#1F1E1C',
-        },
-        ivory: {
-          DEFAULT: '#FAF7F0',
-          light: '#FDFBF7',
-          muted: '#F3EFE6',
+        // Official Brand Color Palette
+        burgundy: {
+          DEFAULT: '#780817', // Royal Burgundy
+          dark: '#530510',    // Dark Burgundy
+          wine: '#40030B',    // Deep Wine
+          light: '#9E1B2D',
         },
         gold: {
-          champagne: '#C8A45D',
-          dark: '#94753E',
-          light: '#E6CF9B',
-          soft: '#EEDCBA',
-          border: 'rgba(200, 164, 93, 0.25)',
+          DEFAULT: '#D4AF37', // Royal Gold
+          royal: '#D4AF37',
+          champagne: '#E8D39A', // Champagne Gold
+          soft: '#F1E4BD',      // Soft Gold
+          dark: '#A6841E',
         },
-        brand: {
-          text: '#202020',
-          muted: '#777777',
-          border: '#E8E1D5',
-        }
+        ivory: {
+          DEFAULT: '#FAF8F2', // Warm Ivory (Main background)
+          warm: '#FAF8F2',
+          cream: '#F3EDE1',   // Soft Cream (Alternate sections)
+          pure: '#FFFFFF',    // Pure White
+          beige: '#EDE5D7',   // Light Beige
+        },
+        charcoal: {
+          DEFAULT: '#292323', // Primary Text
+          secondary: '#70665C', // Secondary Text
+          muted: '#A89A83',     // Muted Text
+        },
+        // Semantic aliases
+        ink: {
+          DEFAULT: '#FAF8F2',
+          2: '#F3EDE1',
+          3: '#EDE5D7',
+        },
+        sand: '#70665C',
+        beige: '#A89A83',
+        cream: '#F3EDE1',
       },
       fontFamily: {
-        serif: ['"Cormorant Garamond"', 'Playfair Display', 'Georgia', 'serif'],
-        sans: ['Inter', 'Manrope', 'system-ui', 'sans-serif'],
+        display: ['"Cormorant Garamond"', 'Times New Roman', 'serif'],
+        serif: ['"Cormorant Garamond"', 'Times New Roman', 'serif'],
+        sans: ['"Manrope"', '"Inter"', 'system-ui', 'sans-serif'],
       },
-      boxShadow: {
-        'subtle': '0 2px 10px rgba(0, 0, 0, 0.04)',
-        'luxury': '0 10px 30px -10px rgba(16, 16, 16, 0.1)',
-        'gold-glow': '0 0 25px rgba(200, 164, 93, 0.15)',
+      letterSpacing: {
+        luxury: '0.125em',
+        'luxury-wide': '0.22em',
+      },
+      animation: {
+        sheen: 'sheen 7s linear infinite',
+        rise: 'rise 1s cubic-bezier(.2,.7,.2,1) both',
+        fadeInDown: 'fadeInDown 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+      },
+      keyframes: {
+        sheen: {
+          to: { backgroundPosition: '-200%' },
+        },
+        rise: {
+          '0%': { opacity: '0', transform: 'translateY(24px)' },
+          '100%': { opacity: '1', transform: 'none' },
+        },
+        fadeInDown: {
+          '0%': { opacity: '0', transform: 'translateY(-10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
       },
     },
   },
   plugins: [],
-}
-
+};

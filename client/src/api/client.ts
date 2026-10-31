@@ -11,7 +11,7 @@ import {
 
 const API_BASE =
   typeof window !== 'undefined' && window.location.port === '3000'
-    ? 'http://127.0.0.1:5001/api'
+    ? 'http://127.0.0.1:5005/api'
     : '/api';
 
 function getAuthHeader(): Record<string, string> {

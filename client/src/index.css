@@ -3,88 +3,183 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-burgundy: #780817;
+    --color-burgundy-dark: #530510;
+    --color-wine: #40030B;
+    --color-gold: #D4AF37;
+    --color-champagne: #E8D39A;
+    --color-soft-gold: #F1E4BD;
+    --color-ivory: #FAF8F2;
+    --color-cream: #F3EDE1;
+    --color-pure-white: #FFFFFF;
+    --color-charcoal: #292323;
+    --color-secondary-text: #70665C;
+    --color-muted-text: #A89A83;
+  }
+
   body {
-    @apply bg-ivory text-brand-text font-sans;
-    color: #202020;
-    text-rendering: optimizeLegibility;
+    background-color: #FAF8F2;
+    color: #292323;
+    font-family: 'Manrope', 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
-  h1, h2, h3, h4, .font-serif, .font-display {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-feature-settings: "liga" 1, "kern" 1;
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Cormorant Garamond', 'Times New Roman', serif;
   }
 }
 
-.gold-gradient-text {
-  background: linear-gradient(135deg, #F3E4C3 0%, #D8B774 35%, #C8A45D 65%, #94753E 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.gold-border-gradient {
-  border-image: linear-gradient(to right, #C8A45D, #E6CF9B, #C8A45D) 1;
-}
-
-/* Kerala Kasavu gold border accent */
-.kasavu-accent {
-  background: linear-gradient(
+/* Royal Burgundy & Gold Kasavu Ribbon */
+.kasavu {
+  background-image: repeating-linear-gradient(
     90deg,
-    rgba(200, 164, 93, 0) 0%,
-    rgba(200, 164, 93, 0.45) 20%,
-    rgba(235, 215, 168, 0.95) 50%,
-    rgba(200, 164, 93, 0.45) 80%,
-    rgba(200, 164, 93, 0) 100%
+    #780817,
+    #780817 3px,
+    #D4AF37 6px,
+    #E8D39A 9px,
+    #D4AF37 12px,
+    #780817 14px,
+    #FAF8F2 14px,
+    #FAF8F2 18px
   );
-  height: 1px;
+  height: 2.5px;
   width: 100%;
 }
 
-.kasavu-pattern {
-  background-image: repeating-linear-gradient(
-    45deg,
-    rgba(200, 164, 93, 0.08),
-    rgba(200, 164, 93, 0.08) 2px,
-    transparent 2px,
-    transparent 8px
-  );
+/* Shimmering royal gold text */
+.gold-text {
+  color: #0000;
+  background: linear-gradient(100deg, #A6841E, #D4AF37 25%, #780817 50%, #D4AF37 75%, #A6841E) 0 0/200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: 7s linear infinite sheen;
 }
 
-/* Luxury hover link underline */
-.nav-link {
+@keyframes sheen {
+  to {
+    background-position: -200%;
+  }
+}
+
+/* Luxury Link Expand Underline from left to right (White & Royal Gold) */
+.nav-link-burgundy {
   position: relative;
-  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  color: #FFFFFF;
+  letter-spacing: 1.2px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.2;
+  transition: color 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
 }
 
-.nav-link::after {
+.nav-link-burgundy::after {
   content: '';
   position: absolute;
-  width: 0;
-  height: 1.5px;
   bottom: -4px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(90deg, #94753E, #C8A45D, #E6CF9B, #C8A45D, #94753E);
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
+  left: 0;
   width: 100%;
+  height: 2px;
+  background-color: #D4AF37;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Custom subtle scrollbar */
+.nav-link-burgundy:hover {
+  color: #D4AF37;
+}
+
+.nav-link-burgundy:hover::after,
+.nav-link-burgundy.is-active::after {
+  transform: scaleX(1);
+}
+
+.nav-link-burgundy.is-active {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* Luxury Product Card Shadow */
+.luxury-card {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(232, 211, 154, 0.6);
+  box-shadow: 0 4px 20px rgba(41, 35, 35, 0.05);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-card:hover {
+  border-color: #D4AF37;
+  box-shadow: 0 16px 36px rgba(120, 8, 23, 0.12);
+  transform: translateY(-3px);
+}
+
+/* Luxury Primary Button (Burgundy + Gold Hover) */
+.btn-luxury-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #780817;
+  color: #FAF8F2;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  padding: 0.875rem 2rem;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  box-shadow: 0 4px 14px rgba(120, 8, 23, 0.25);
+  transition: all 0.3s ease;
+}
+
+.btn-luxury-primary:hover {
+  background-color: #530510;
+  border-color: #E8D39A;
+  box-shadow: 0 6px 20px rgba(120, 8, 23, 0.38);
+}
+
+/* Luxury Secondary Button (Outline Burgundy) */
+.btn-luxury-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: #780817;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  padding: 0.875rem 2rem;
+  border-radius: 9999px;
+  border: 1px solid #780817;
+  transition: all 0.3s ease;
+}
+
+.btn-luxury-secondary:hover {
+  background-color: #780817;
+  color: #FAF8F2;
+  border-color: #780817;
+  box-shadow: 0 4px 14px rgba(120, 8, 23, 0.25);
+}
+
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #101010;
+  background: #FAF8F2;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C8A45D;
-  border-radius: 3px;
+  background: rgba(120, 8, 23, 0.25);
+  border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94753E;
+  background: rgba(120, 8, 23, 0.5);
 }

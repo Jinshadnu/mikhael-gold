@@ -34,14 +34,14 @@ export const AdminLogin: React.FC = () => {
       <div className="max-w-md w-full">
         {/* Brand Header */}
         <div className="text-center mb-8">
-          <div className="w-14 h-14 rounded-full border-2 border-gold-champagne bg-slate-900 mx-auto flex items-center justify-center font-serif text-2xl font-bold text-gold-champagne shadow-gold-glow mb-4">
-            M
+          <div className="w-16 h-16 rounded-full ring-2 ring-gold/50 overflow-hidden bg-maroon mx-auto shadow-xl mb-4">
+            <img src="/img/logo.png" alt="Mikhael Gold & Diamonds" className="w-full h-full object-cover" />
           </div>
-          <h1 className="font-serif text-2xl sm:text-3xl font-bold text-slate-100 tracking-wider uppercase">
-            Mikhael Gold & Diamonds
+          <h1 className="font-display text-2xl sm:text-3xl font-bold text-ivory tracking-wider uppercase">
+            Mikhael Gold &amp; Diamonds
           </h1>
-          <p className="text-xs text-gold-champagne tracking-[0.25em] uppercase font-medium mt-1">
-            Administrative Access
+          <p className="text-xs text-gold tracking-[0.25em] uppercase font-semibold mt-1">
+            Administrative Management Portal
           </p>
         </div>
 

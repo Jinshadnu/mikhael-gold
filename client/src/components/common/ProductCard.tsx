@@ -1,149 +1,86 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MessageCircle, Eye, ArrowUpRight, ShieldCheck } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { Product } from '../../types';
-import { useSettings } from '../../context/SettingsContext';
 
 interface ProductCardProps {
   product: Product;
   onEnquire?: (product: Product) => void;
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({ product, onEnquire }) => {
-  const { formatPrice, getWhatsAppLink } = useSettings();
+export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  // Map common product names or categories to traditional Malayalam script if applicable
+  const getMalayalamSubtitle = (name: string, category?: string) => {
+    const lower = name.toLowerCase();
+    if (lower.includes('kasu')) return 'കാശു മാല';
+    if (lower.includes('palakka')) return 'പാലക്ക മാല';
+    if (lower.includes('nagapadam')) return 'നാഗപടം';
+    if (lower.includes('mullamottu')) return 'മുല്ലമൊട്ട് മാല';
+    if (lower.includes('jhumka') || lower.includes('jimikki')) return 'ജിമിക്കി';
+    if (lower.includes('bangle')) return 'വളകൾ';
+    if (lower.includes('ring')) return 'മോതിരം';
+    if (lower.includes('coin') || lower.includes('bar')) return 'സ്വർണ്ണ നാണയം';
+    if (category?.toLowerCase().includes('necklace')) return 'മാല';
+    if (category?.toLowerCase().includes('earring')) return 'കമ്മൽ';
+    return '';
+  };
 
-  const isPriceVisible = Boolean(product.display_price) && product.published_price !== null;
-
-  const defaultImg =
-    'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=800&auto=format&fit=crop';
-
-  const whatsappMessage = `Hello Mikhael Gold and Diamonds, I am interested in "${product.name}" (Code: ${product.sku}). Please share availability and details.`;
+  const malayalam = getMalayalamSubtitle(product.name, product.category_name);
+  const purityLabel = product.purity || (product.material?.includes('Diamond') ? 'DIAMOND' : '22K · 916');
 
   return (
-    <div className="group bg-white rounded-xl overflow-hidden border border-brand-border/80 hover:border-gold-champagne/80 transition-all duration-500 shadow-subtle hover:shadow-luxury flex flex-col justify-between">
-      {/* Image Container with Badges */}
-      <div className="relative aspect-[4/5] w-full bg-ivory-muted overflow-hidden">
-        <Link to={`/products/${product.slug}`} className="block w-full h-full">
+    <Link to={`/products/${product.slug}`} className="group block h-full">
+      {/* Pure White Luxury Card Container with Champagne Gold Border */}
+      <div className="flex flex-col h-full rounded-2xl bg-white border border-[#E8D39A]/70 p-3 shadow-[0_4px_20px_rgba(41,35,35,0.05)] transition-all duration-500 group-hover:border-[#D4AF37] group-hover:shadow-[0_16px_36px_rgba(120,8,23,0.12)] group-hover:-translate-y-1">
+        
+        {/* Arched Image Frame */}
+        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-t-[999px] rounded-b-xl bg-[#F3EDE1]">
           <img
-            src={product.main_image || defaultImg}
+            src={product.main_image || '/img/kasu-mala.png'}
             alt={product.name}
-            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
             loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-108"
           />
-        </Link>
 
-        {/* Subtle Vignette Gradient */}
-        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+          {/* Ambient subtle vignette */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent opacity-60" />
 
-        {/* Status Badges */}
-        <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10 pointer-events-none">
-          {product.purity && (
-            <span className="px-3 py-1 rounded-full text-[10px] font-semibold tracking-wider uppercase bg-luxury-black/90 text-gold-champagne backdrop-blur-md border border-gold-champagne/40 shadow-sm">
-              {product.purity}
-            </span>
-          )}
-          {Boolean(product.is_new_arrival) && (
-            <span className="px-3 py-1 rounded-full text-[10px] font-semibold tracking-wider uppercase bg-gold-champagne text-luxury-black shadow-sm">
-              New Arrival
-            </span>
-          )}
+          {/* Rotated purity label */}
+          <span className="absolute left-3.5 top-1/2 -translate-y-1/2 -rotate-90 origin-left text-[10px] font-semibold uppercase tracking-[0.25em] text-[#780817] bg-[#FAF8F2]/95 backdrop-blur-sm px-2.5 py-0.5 rounded-full border border-[#E8D39A]">
+            {purityLabel}
+          </span>
+
+          {/* Hover Arrow Circle */}
+          <span className="absolute bottom-3.5 right-3.5 grid h-9 w-9 place-items-center rounded-full bg-[#780817] text-[#D4AF37] opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-105 shadow-md">
+            <ArrowUpRight className="h-4 w-4" />
+          </span>
         </div>
 
-        {/* Quick actions hover overlay */}
-        <div className="absolute inset-0 bg-luxury-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
-          <Link
-            to={`/products/${product.slug}`}
-            className="p-3 rounded-full bg-white text-luxury-black hover:bg-gold-champagne transition shadow-md"
-            title="View Details"
-          >
-            <Eye className="w-4 h-4" />
-          </Link>
-          <a
-            href={getWhatsAppLink(whatsappMessage)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 rounded-full bg-emerald-600 text-white hover:bg-emerald-500 transition shadow-md"
-            title="Enquire on WhatsApp"
-          >
-            <MessageCircle className="w-4 h-4" />
-          </a>
-        </div>
-      </div>
-
-      {/* Product Details */}
-      <div className="p-5 flex-1 flex flex-col justify-between">
-        <div>
-          {/* Category & SKU */}
-          <div className="flex items-center justify-between text-[11px] text-brand-muted tracking-wider uppercase mb-1.5 font-medium">
-            <span className="text-gold-dark font-semibold">{product.category_name || product.material}</span>
-            <span className="font-mono text-[10px] text-brand-muted/80">{product.sku}</span>
-          </div>
-
-          {/* Product Name */}
-          <h3 className="font-serif text-lg font-bold text-luxury-black leading-snug group-hover:text-gold-dark transition-colors duration-200 line-clamp-2">
-            <Link to={`/products/${product.slug}`}>{product.name}</Link>
-          </h3>
-
-          {/* Specifications row */}
-          <div className="mt-3 flex items-center gap-2.5 text-xs text-brand-muted">
-            {product.gross_weight && (
-              <span className="bg-ivory px-2.5 py-1 rounded text-[11px] border border-brand-border font-medium text-brand-text">
-                Wt: {product.gross_weight}g
-              </span>
-            )}
-            {product.availability_status === 'made_to_order' ? (
-              <span className="text-[11px] text-amber-700 font-medium">Made to order</span>
-            ) : (
-              <span className="text-[11px] text-emerald-700 font-medium flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-                <span>In Showroom</span>
-              </span>
-            )}
-          </div>
-        </div>
-
-        {/* Price & CTA Row */}
-        <div className="mt-5 pt-3.5 border-t border-brand-border/70 flex items-center justify-between gap-2">
+        {/* Card Typography & Details */}
+        <div className="pt-4 pb-2 px-1 text-left flex-1 flex flex-col justify-between">
           <div>
-            {isPriceVisible ? (
-              <div>
-                <span className="text-[10px] text-brand-muted uppercase tracking-wider block font-medium">
-                  Showroom Price
-                </span>
-                <span className="font-serif font-bold text-luxury-black text-lg">
-                  {formatPrice(product.published_price)}
-                </span>
-              </div>
-            ) : (
-              <div>
-                <span className="text-xs font-semibold text-gold-dark tracking-wide uppercase">
-                  Contact for Price
-                </span>
-              </div>
+            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#D4AF37]">
+              {product.category_name || 'Traditional Jewellery'}
+            </p>
+            <h3 className="mt-1 font-display text-[22px] leading-snug font-medium text-[#780817] transition-colors duration-200 group-hover:text-[#530510]">
+              {product.name}
+            </h3>
+            {malayalam && (
+              <p className="text-xs text-[#70665C] font-sans mt-0.5">{malayalam}</p>
             )}
           </div>
 
-          <div className="flex items-center gap-2">
-            {onEnquire ? (
-              <button
-                onClick={() => onEnquire(product)}
-                className="text-xs uppercase tracking-wider font-bold text-luxury-black hover:text-gold-dark flex items-center gap-1 transition"
-              >
-                <span>Enquire</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-gold-champagne" />
-              </button>
-            ) : (
-              <Link
-                to={`/products/${product.slug}`}
-                className="text-xs uppercase tracking-wider font-bold text-luxury-black hover:text-gold-dark flex items-center gap-1 transition"
-              >
-                <span>Details</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-gold-champagne" />
-              </Link>
-            )}
+          <div className="mt-4 pt-3 border-t border-[#E8D39A]/40 flex items-center justify-between text-xs text-[#70665C]">
+            <span className="text-[11px] uppercase tracking-wider text-[#A89A83]">
+              {product.gross_weight ? `Wt: ${product.gross_weight}g` : 'BIS Hallmarked'}
+            </span>
+            <span className="font-semibold text-[#780817] group-hover:text-[#D4AF37] uppercase tracking-wider text-[11px] transition-colors flex items-center gap-1">
+              <span>View Piece</span>
+              <ArrowUpRight className="h-3 w-3" />
+            </span>
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };

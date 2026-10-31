@@ -44,14 +44,14 @@ export const AdminLayout: React.FC = () => {
         <div>
           {/* Brand Emblem */}
           <div className="p-6 border-b border-slate-800 flex items-center gap-3">
-            <span className="w-9 h-9 rounded-full border border-gold-champagne flex items-center justify-center font-serif text-gold-champagne font-bold text-lg bg-slate-900">
-              M
-            </span>
+            <div className="w-10 h-10 rounded-full ring-1 ring-gold/40 overflow-hidden bg-maroon shrink-0">
+              <img src="/img/logo.png" alt="Mikhael Gold & Diamonds" className="w-full h-full object-cover" />
+            </div>
             <div>
               <p className="font-serif text-sm font-bold tracking-widest text-slate-100 uppercase">
                 MIKHAEL GOLD
               </p>
-              <p className="text-[10px] tracking-widest text-gold-champagne uppercase font-medium">
+              <p className="text-[10px] tracking-widest text-gold uppercase font-semibold">
                 Admin Console
               </p>
             </div>
