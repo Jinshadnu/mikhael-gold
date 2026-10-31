@@ -40,6 +40,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             src={assetUrl(product.main_image || '/img/kasu-mala.png')}
             alt={product.name}
             loading="lazy"
+            onError={(e) => {
+              const fallback = assetUrl('/img/kasu-mala.png');
+              if (e.currentTarget.src !== fallback) {
+                e.currentTarget.src = fallback;
+              }
+            }}
             className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-108"
           />
 
