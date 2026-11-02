@@ -191,7 +191,7 @@ export const Home: React.FC = () => {
         {/* =================================================================== */}
         {/* SECTION 1: LUXURY HERO SECTION                                      */}
         {/* =================================================================== */}
-        <section className="relative flex min-h-[92svh] lg:min-h-[96svh] items-center justify-center overflow-hidden bg-[#FAF8F2] pt-24 lg:pt-[104px]">
+        <section className="relative flex min-h-[92svh] lg:min-h-[96svh] items-center justify-center overflow-hidden bg-[#FAF8F2] pt-16 sm:pt-24 lg:pt-[104px]">
           {/* Hero Photography with Warm Luxury Vignette Overlay */}
           <div className="absolute inset-0">
             <img
@@ -204,7 +204,7 @@ export const Home: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-[#FAF8F2] via-transparent to-[#292323]/30" />
           </div>
 
-          <div className="relative mx-auto w-full max-w-7xl px-6 py-28 lg:px-10 lg:py-36">
+          <div className="relative mx-auto w-full max-w-7xl px-5 py-20 sm:px-6 sm:py-28 lg:px-10 lg:py-36">
             {/* Eyebrow badge */}
             <div className="rise inline-flex items-center gap-2.5 rounded-full border border-[#E8D39A]/60 bg-[#780817]/85 backdrop-blur-md px-4 py-1.5 shadow-md">
               <Sparkles className="h-3.5 w-3.5 text-[#D4AF37]" />

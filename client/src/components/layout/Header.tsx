@@ -169,10 +169,10 @@ export const Header: React.FC = () => {
         }`}
         role="banner"
       >
-        <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-10">
+        <div className="mx-auto max-w-[1600px] px-3.5 sm:px-6 lg:px-8 xl:px-10">
           <div
             className={`flex items-center justify-between transition-all duration-300 ease-out ${
-              scrolled ? 'h-20 lg:h-[82px]' : 'h-24 lg:h-[104px]'
+              scrolled ? 'h-16 sm:h-20 lg:h-[82px]' : 'h-16 sm:h-24 lg:h-[104px]'
             }`}
           >
             {/* =============================================================== */}
@@ -181,15 +181,15 @@ export const Header: React.FC = () => {
             <div className="flex items-center shrink-0">
               <Link
                 to="/"
-                className="group flex items-center gap-3.5 sm:gap-4 focus:outline-none"
+                className="group flex items-center gap-2.5 sm:gap-4 focus:outline-none"
                 aria-label="MIKHAEL Gold & Diamonds Home"
               >
                 {/* Preserved Original Circular Logo: 68-76px on desktop (72px top, 58px sticky) */}
                 <div
                   className={`relative shrink-0 rounded-full overflow-hidden border border-[#D4AF37]/60 bg-[#780817] shadow-sm transition-all duration-300 ease-out group-hover:border-[#D4AF37] group-hover:shadow-[0_0_12px_rgba(212,175,55,0.35)] ${
                     scrolled
-                      ? 'w-12 h-12 sm:w-[54px] sm:h-[54px] lg:w-[58px] lg:h-[58px]'
-                      : 'w-13 h-13 sm:w-16 sm:h-16 lg:w-[72px] lg:h-[72px]'
+                      ? 'w-10 h-10 sm:w-12 sm:h-12 lg:w-[58px] lg:h-[58px]'
+                      : 'w-11 h-11 sm:w-14 sm:h-14 lg:w-[72px] lg:h-[72px]'
                   }`}
                 >
                   <img
@@ -203,13 +203,13 @@ export const Header: React.FC = () => {
 
                 {/* Brand Name & Location Hierarchy */}
                 <div className="flex flex-col text-left justify-center">
-                  <span className="font-serif text-[22px] sm:text-2xl lg:text-[26px] font-normal tracking-[0.2em] text-white uppercase leading-none transition-colors duration-300 group-hover:text-[#D4AF37]">
+                  <span className="font-serif text-[17px] sm:text-2xl lg:text-[26px] font-normal tracking-[0.16em] sm:tracking-[0.2em] text-white uppercase leading-none transition-colors duration-300 group-hover:text-[#D4AF37]">
                     MIKHAEL
                   </span>
-                  <span className="mt-1 text-[9px] sm:text-[9.5px] lg:text-[10px] font-semibold tracking-[0.26em] text-[#D4AF37] uppercase leading-tight">
+                  <span className="mt-1 text-[8px] sm:text-[9.5px] lg:text-[10px] font-semibold tracking-[0.22em] sm:tracking-[0.26em] text-[#D4AF37] uppercase leading-tight">
                     GOLD &amp; DIAMONDS
                   </span>
-                  <span className="mt-0.5 text-[7.5px] sm:text-[8px] font-medium tracking-[0.22em] text-[#E8D39A] uppercase leading-tight">
+                  <span className="hidden sm:block mt-0.5 text-[7.5px] sm:text-[8px] font-medium tracking-[0.22em] text-[#E8D39A] uppercase leading-tight">
                     PUNNAYURKULAM · KERALA
                   </span>
                 </div>
@@ -549,23 +549,32 @@ export const Header: React.FC = () => {
             </nav>
 
             {/* =============================================================== */}
-            {/* 3. RIGHT SECTION: ENQUIRE CTA ACTION                            */}
+            {/* 3. RIGHT SECTION: ACTIONS (ENQUIRE & MOBILE MENU)              */}
             {/* =============================================================== */}
-            <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
-              {/* ENQUIRE BUTTON: Burgundy filled button, ivory text, message icon, champagne gold hover */}
+            <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+              {/* MOBILE QUICK ENQUIRE ICON (Screens < sm) */}
               <a
                 href="/contact"
-                className="group inline-flex items-center gap-2 rounded-full bg-[#780817] px-4.5 sm:px-5 py-2 sm:py-2.5 text-[11px] font-semibold uppercase tracking-[1.4px] text-[#FAF8F2] border border-[#D4AF37]/50 shadow-md transition-all duration-300 hover:bg-[#530510] hover:border-[#E8D39A] hover:text-[#FAF8F2] hover:shadow-[0_4px_16px_rgba(212,175,55,0.3)] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+                className="sm:hidden flex items-center justify-center w-9 h-9 rounded-full bg-[#780817] text-[#FAF8F2] border border-[#D4AF37]/60 shadow-md transition-colors hover:bg-[#530510] focus:outline-none"
+                aria-label="Enquire"
+              >
+                <MessageSquare className="h-4 w-4 text-[#E8D39A]" />
+              </a>
+
+              {/* TABLET & DESKTOP ENQUIRE PILL BUTTON (Screens >= sm) */}
+              <a
+                href="/contact"
+                className="hidden sm:inline-flex items-center gap-2 rounded-full bg-[#780817] px-4 sm:px-5 py-2 sm:py-2.5 text-[11px] font-semibold uppercase tracking-[1.4px] text-[#FAF8F2] border border-[#D4AF37]/50 shadow-md transition-all duration-300 hover:bg-[#530510] hover:border-[#E8D39A] hover:text-[#FAF8F2] hover:shadow-[0_4px_16px_rgba(212,175,55,0.3)] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
                 aria-label="Enquire or book private showroom appointment"
               >
                 <MessageSquare className="h-3.5 w-3.5 text-[#E8D39A] transition-transform duration-300 group-hover:-translate-y-0.5" />
                 <span>ENQUIRE</span>
               </a>
 
-              {/* MOBILE HAMBURGER BUTTON (Visible below xl screens) */}
+              {/* MOBILE & TABLET HAMBURGER BUTTON (Visible below xl screens) */}
               <button
                 onClick={() => setMobileMenuOpen(true)}
-                className="xl:hidden p-2 rounded-full border border-white/40 text-white hover:text-[#D4AF37] hover:border-[#D4AF37] transition duration-200 focus:outline-none"
+                className="xl:hidden flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/50 bg-black/20 backdrop-blur-md text-white hover:text-[#D4AF37] hover:border-[#D4AF37] transition duration-200 focus:outline-none shrink-0"
                 aria-label="Open navigation menu"
                 aria-expanded={mobileMenuOpen}
               >
